@@ -6,6 +6,7 @@
 #pragma once
 
 #include <string>
+#include <utility>
 
 namespace aliceVision {
 namespace sensorDB {
@@ -17,17 +18,17 @@ struct Datasheet
 {
   Datasheet() = default;
 
-  /**
+    /**
    * @brief Datasheet Constructor
    * @param brand
    * @param model
    * @param sensorSize
    */
-  Datasheet( const std::string& brand,
-             const std::string& model,
-             const double& sensorSize ):
-                  _brand(brand),
-                  _model(model),
+  Datasheet(std::string brand,
+            std::string model,
+            const double& sensorSize ):
+                  _brand(std::move(brand)),
+                  _model(std::move(model)),
                   _sensorSize(sensorSize)
   {}
 
