@@ -15,8 +15,7 @@ namespace sensorDB {
  */
 struct Datasheet
 {
-  Datasheet()
-  {}
+  Datasheet() = default;
 
   /**
    * @brief Datasheet Constructor
@@ -36,7 +35,7 @@ struct Datasheet
 
   std::string _brand;
   std::string _model;
-  double _sensorSize;
+  double _sensorSize{};
 };
 
 } // namespace sensorDB
